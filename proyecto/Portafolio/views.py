@@ -40,22 +40,22 @@ def registrarUsuario(request):
         formulario = UsuarioFormulario()
     return render(request,'Portafolio/registro.html',{'formulario': formulario})
 
-def login(request):
-    if request.method == 'POST':
-        form = LoginFormulario(request.POST)
-        if form is not None:
-            user = auth.authenticate(username=form['nombre_de_usuario'], password=form['contraseña'])
-            if user is not None:
-               auth.login(request, user)
-               return render(request,'Portafolio/inicio.html') 
-        else:
-            messages.info(request, 'Invalid Username or Password')
-            return redirect('Portafolio/login.html')
-    else:
-        form = LoginFormulario()
-    return render(request, 'Portafolio/inicio.html',{'form':form})
-
-
-def logout_user(request):
-    auth.logout(request)
-    return redirect('inicio')
+#def login(request):
+#    if request.method == 'POST':
+#        form = LoginFormulario(request.POST)
+#        if form is not None:
+#            user = auth.authenticate(username=form['nombre_de_usuario'], password=form['contraseña'])
+#            if user is not None:
+#               auth.login(request, user)
+#               return render(request,'Portafolio/inicio.html') 
+#        else:
+#            messages.info(request, 'Invalid Username or Password')
+#            return redirect('Portafolio/login.html')
+#    else:
+#        form = LoginFormulario()
+#    return render(request, 'Portafolio/inicio.html',{'form':form})
+#
+#
+#def logout_user(request):
+#    auth.logout(request)
+#    return redirect('inicio')
