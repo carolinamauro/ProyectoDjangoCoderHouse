@@ -1,0 +1,30 @@
+{% extends "Portafolio/hijos.html" %}
+{% load static %}
+{%block nombrePagina%} Contacto {%endblock%}
+{%block contenidoQueCambia%}
+<!-- contact -->
+<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="section-title" id="contacto">Contact Info</h2>
+        </div>
+        <div class="col-lg-8 mx-auto">
+          <div class="bg-white rounded text-center p-5 shadow-down">
+            <h4 class="mb-80">Contact Form</h4>
+            <form action="" class="row" method="post">{% csrf_token %}
+                <table>
+                    {{ formulario.as_table }}
+                </table>
+                <input type="submit" class="btn btn-primary w-100" value="Enviar Formulario" />
+            </form>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /contact -->
+
+{%endblock%}

@@ -1,0 +1,10 @@
+{% extends "Portafolio/hijos.html" %}
+{% load static %}
+{%block nombrePagina%} Inicia sesion {%endblock%}
+{%block contenidoQueCambia%}
+<div>
+    <h2>
+        ¿ Todavía no etas registrado ? <a href="{% url 'Resgistro' %}" >Registrate</a> para cargar tu testimonio !
+    </h2>
+</div>
+{%endblock%}
